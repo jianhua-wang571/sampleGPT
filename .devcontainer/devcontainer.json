@@ -1,0 +1,53 @@
+{
+    "name": "Azure Developer CLI",
+    "image": "mcr.microsoft.com/devcontainers/python:3.10",
+    "features": {
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "16",
+            "nodeGypDependencies": false
+        },
+        "ghcr.io/devcontainers/features/azure-cli:1.0.8": {},
+        "ghcr.io/azure/azure-dev/azd:latest": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-azuretools.azure-dev",
+                "ms-azuretools.vscode-bicep",
+                "ms-python.python"
+            ]
+        },
+        "codespaces": {
+            "openFiles": [
+              "README.md"
+            ]
+        }
+    },
+    "forwardPorts": [
+        5000
+    ],
+    "remoteUser": "vscode",
+    "hostRequirements": {
+        "memory": "8gb"
+    },
+
+    "containerEnv": {
+        "AZURE_OPENAI_KEY": "${localEnv:AZURE_OPENAI_KEY}",
+        "AZURE_OPENAI_ENDPOINT": "${localEnv:AZURE_OPENAI_ENDPOINT}",
+        "AZURE_OPENAI_MODEL": "${localEnv:AZURE_OPENAI_MODEL}",
+        "AZURE_OPENAI_RESOURCE": "${localEnv:AZURE_OPENAI_RESOURCE}",
+        "AZURE_SEARCH_INDEX": "${localEnv:AZURE_SEARCH_INDEX}",
+        "AZURE_SEARCH_KEY": "${localEnv:AZURE_SEARCH_KEY}",
+        "AZURE_SEARCH_SERVICE": "${localEnv:AZURE_SEARCH_SERVICE}",
+        "AZURE_OPENAI_EMBEDDING_KEY":"${localEnv:AZURE_OPENAI_EMBEDDING_KEY}",
+        "AZURE_OPENAI_EMBEDDING_NAME":"${localEnv:AZURE_OPENAI_EMBEDDING_NAME}"
+
+
+
+    }
+
+
+
+
+
+}
